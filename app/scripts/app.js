@@ -1,11 +1,9 @@
-// Ionic Starter App
-
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module("template", ["ionic", "starter.controllers", "starter.services"])
+angular.module("template", ["ionic", "starter.controllers"])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -15,11 +13,15 @@ angular.module("template", ["ionic", "starter.controllers", "starter.services"])
 
 .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
+
+        // Setup the tabs themselves
         .state("tab", {
             url: "/tab",
             abstract: true,
             templateUrl: "templates/tabs.html"
         })
+
+        // Setup routes for the app's three tabs
         .state("tab.home", {
             url: "/dash",
             views: {
@@ -38,20 +40,15 @@ angular.module("template", ["ionic", "starter.controllers", "starter.services"])
                 }
             }
         })
-
-    .state('tab.friends', {
-      url: '/friends',
-      views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
+        .state("tab.contacts", {
+            url: "/friends",
+            views: {
+                "tab-contacts": {
+                templateUrl: 'templates/tab-friends.html',
+                controller: 'FriendsCtrl'
+            }
         }
-      }
     });
 
-
-
     $urlRouterProvider.otherwise("/tab/dash");
-
 });
-
