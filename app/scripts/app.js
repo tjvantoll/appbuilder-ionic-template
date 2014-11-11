@@ -6,11 +6,12 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular.module("template", ["ionic", "starter.controllers", "starter.services"])
-    .run(function($ionicPlatform) {
-        $ionicPlatform.ready(function() {
-            // Place initialization code here
-        });
-    })
+
+.run(function($ionicPlatform) {
+    $ionicPlatform.ready(function() {
+        // Place app initialization code here
+    });
+})
 
 .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
@@ -28,6 +29,15 @@ angular.module("template", ["ionic", "starter.controllers", "starter.services"])
                 }
             }
         })
+        .state("tab.settings", {
+            url: "/account",
+            views: {
+                "tab-settings": {
+                    templateUrl: "templates/tab-account.html",
+                    controller: "AccountCtrl"
+                }
+            }
+        })
 
     .state('tab.friends', {
       url: '/friends',
@@ -37,17 +47,9 @@ angular.module("template", ["ionic", "starter.controllers", "starter.services"])
           controller: 'FriendsCtrl'
         }
       }
-    })
-
-    .state('tab.account', {
-      url: '/account',
-      views: {
-        'tab-account': {
-          templateUrl: 'templates/tab-account.html',
-          controller: 'AccountCtrl'
-        }
-      }
     });
+
+
 
     $urlRouterProvider.otherwise("/tab/dash");
 
