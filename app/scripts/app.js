@@ -27,7 +27,7 @@ angular.module("template", ["ionic", "starter.controllers"])
             views: {
                 "tab-home": {
                     templateUrl: "templates/tab-dash.html",
-                    controller: "DashCtrl"
+                    controller: "HomeCtrl"
                 }
             }
         })
@@ -36,7 +36,7 @@ angular.module("template", ["ionic", "starter.controllers"])
             views: {
                 "tab-settings": {
                     templateUrl: "templates/tab-account.html",
-                    controller: "AccountCtrl"
+                    controller: "SettingsCtrl"
                 }
             }
         })
@@ -45,7 +45,7 @@ angular.module("template", ["ionic", "starter.controllers"])
             views: {
                 "tab-contacts": {
                 templateUrl: 'templates/tab-friends.html',
-                controller: 'FriendsCtrl'
+                controller: 'ContactsCtrl'
             }
         }
     });

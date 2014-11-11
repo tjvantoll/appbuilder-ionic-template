@@ -1,11 +1,16 @@
 angular.module("starter.controllers", [])
 
-.controller("DashCtrl", function($scope) {
-
+.controller("HomeCtrl", function($scope) {
+    // Initialization code for the Home tab
 })
-.controller("FriendsCtrl", function($scope) {
-
+.controller("SettingsCtrl", function($scope) {
+    // Initialization code for the Home tab
 })
-.controller("AccountCtrl", function($scope) {
-
+.controller("ContactsCtrl", function($scope) {
+    $scope.contacts = [
+        "TJ VanToll",
+        "Burke Holland",
+        "Jen Looper",
+        "Rob Lauer"
+    ]
 });
