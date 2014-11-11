@@ -1,4 +1,4 @@
-angular.module("starter.controllers", [])
+angular.module("template.controllers", [])
 
 .controller("HomeCtrl", function($scope) {
     // Initialization code for the Home tab

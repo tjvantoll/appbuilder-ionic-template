@@ -1,13 +1,14 @@
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module("template", ["ionic", "starter.controllers"])
+// Register the "template" Angular module.
+// "tempalte" also appears as the ng-app attribute value in index.html.
+// The second parameter contains a list of dependencies for this module.
+// Currently this template module depends on a module that contains
+// Angular controllers for each tab.
+angular.module("template", ["ionic", "template.controllers"])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
         // Place app initialization code here
+        navigator.splashscreen.hide();
     });
 })
 
@@ -23,32 +24,32 @@ angular.module("template", ["ionic", "starter.controllers"])
 
         // Setup routes for the app's three tabs
         .state("tab.home", {
-            url: "/dash",
+            url: "/home",
             views: {
                 "tab-home": {
-                    templateUrl: "templates/tab-dash.html",
+                    templateUrl: "templates/home.html",
                     controller: "HomeCtrl"
                 }
             }
         })
         .state("tab.settings", {
-            url: "/account",
+            url: "/settings",
             views: {
                 "tab-settings": {
-                    templateUrl: "templates/tab-account.html",
+                    templateUrl: "templates/settings.html",
                     controller: "SettingsCtrl"
                 }
             }
         })
         .state("tab.contacts", {
-            url: "/friends",
+            url: "/contacts",
             views: {
                 "tab-contacts": {
-                templateUrl: 'templates/tab-friends.html',
+                templateUrl: 'templates/contacts.html',
                 controller: 'ContactsCtrl'
             }
         }
     });
 
-    $urlRouterProvider.otherwise("/tab/dash");
+    $urlRouterProvider.otherwise("/tab/home");
 });
